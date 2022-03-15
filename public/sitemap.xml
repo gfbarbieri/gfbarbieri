@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/code_tutorials/fun/probability/birthday_problem/</loc>
+    <lastmod>2021-01-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/code_tutorials/</loc>
+    <lastmod>2021-01-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2021-01-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/code_tutorials/fun/counting/counting_poker_hands/</loc>
+    <lastmod>2017-09-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/code_tutorials/fun/counting/count_remove_repetitions/</loc>
+    <lastmod>2017-08-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/code_tutorials/fun/counting/counting_coin_die/</loc>
+    <lastmod>2017-08-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/code_tutorials/fun/counting/counting_introduction/</loc>
+    <lastmod>2017-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+  </url><url>
+    <loc>/code_topics/code_topics/</loc>
+  </url><url>
+    <loc>/code_topics/</loc>
+  </url><url>
+    <loc>/tags/</loc>
+  </url>
+</urlset>

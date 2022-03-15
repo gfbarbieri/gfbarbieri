@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Greg Barbieri</title>
+
+  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="/css/syntax.css" rel="stylesheet">
+
+  
+  <script src="https://kit.fontawesome.com/d86cd22b71.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" rel="stylesheet">
+
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+  
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+    });  
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+
+  <body>
+        <nav class="navbar navbar-expand-sm fixed-top">
+    <div class="container">
+
+        
+        <a class="navbar-brand" href="/">Greg Barbieri</a>
+        
+        <div class="collapse navbar-collapse">    
+            
+            <ul class="nav navbar-nav mr-auto"></ul>
+
+            
+            <ul class="navbar-nav">
+
+               <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown">
+                       Code Tutorials
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
+                        <a class="dropdown-item" href="/code_topics/code_topics#fun">Fun Problems</a>
+                    </div>
+                </li>
+
+                
+
+                
+
+                
+
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+        
+
+<main class="code_tutorial">
+  <div class="container" style="padding-top:100px;">
+    <div class="row">
+      <div class="col-sm-12">
+        <article>
+            <header>
+              <h1>
+                Birthday Problem
+              </h1>
+            </header>
+              <div class="content">
+                <p>If there are n people in the room, the probability that all n birthdays are distinct equals (none are equal):</p>
+<p>$\displaystyle\prod_{k=1}^{n}{\frac{365-(k-1)}{365}}$</p>
+<p>Therefore, the probability is 1 minus the results of the product.</p>
+<h2 id="imports">Imports</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">matplotlib.pyplot</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">plt</span>
+</span></span></code></pre></div><h2 id="calculate-probability">Calculate Probability</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>indiv_prob_list <span style="color:#666">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> num <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">1</span>,<span style="color:#40a070">101</span>):
+</span></span><span style="display:flex;"><span>    indiv_prob <span style="color:#666">=</span> (<span style="color:#40a070">365</span><span style="color:#666">-</span>(num<span style="color:#666">-</span><span style="color:#40a070">1</span>))<span style="color:#666">/</span><span style="color:#40a070">365</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    indiv_prob_list<span style="color:#666">.</span>append(indiv_prob)
+</span></span></code></pre></div><h2 id="plot-probability">Plot Probability</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#666">.</span>plot(np<span style="color:#666">.</span>linspace(<span style="color:#40a070">1</span>,<span style="color:#40a070">100</span>,<span style="color:#40a070">100</span>), <span style="color:#40a070">1</span><span style="color:#666">-</span>np<span style="color:#666">.</span>cumprod(indiv_prob_list))
+</span></span></code></pre></div><p><img src="/images/birthday_problem.png" alt="png"></p>
+
+              </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+        <footer class="footer">
+    <div class="container">
+        <span class="text-muted">
+            <p>Greg Barbieri &middot; 2022 &middot; <a href="">License</a></p>
+        </span>
+        <div class="col-md-4 col-sm-6">
+        </div>
+    </div>
+</footer>
+  </body>
+
+</html>

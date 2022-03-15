@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<main class="homepage" style="padding-top:250px;">
+  <div class="container">
+    <div class="row">
+      <!-- ** Begin sidebar. ** -->
+      {{ partial "sidebar.html" . }}
+
+      <!-- ** Begin about section. ** -->
+      {{ partial "about.html" . }}
+    </div>
+  </div>
+  <!-- Space before footer. -->
+  <hr class="space-32">
+</main>
+
+{{ end }}

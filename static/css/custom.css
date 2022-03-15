@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+/*-------------------------------------
+Navigation Bar Settings
+-------------------------------------*/
+
+.navbar {
+    background-color: #1448d6;
+    border-bottom: 0px;
+  }
+
+.navbar .navbar-brand, .navbar .navbar-brand:hover {
+    color: #fff;
+    font-weight: 500;
+    font-size: .9em;
+    text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+    color: #fff;
+    font-weight: 500;
+    font-size: .8em;
+    text-transform: uppercase;
+}
+
+/* ------------------------------------
+Genearl Settings
+-------------------------------------*/
+
+.container {
+    max-width: 960px;
+}
+
+.footer {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+.space-12 {
+    height:12px
+}
+
+.space-32 {
+    height:32px
+}
+
+.space-12, .space-32 {
+    margin:0;
+    padding:0;
+    border:none;
+}
+/*-------------------------------------
+Homepage Settings
+-------------------------------------*/
+
+/*
+    Row-Column Settings
+*/
+@media(min-width:768px) {
+    .homepage .sidebar {
+        margin-top:calc(-50% - 48px)
+    }
+}
+@media(min-width:992px) {
+    .homepage .sidebar {
+        margin-top:calc(-50% - 48px)
+    }
+}
+
+@media(min-width:768px) {
+    .homepage .hidden-md-up{
+        display:none
+    }
+}
+
+/*
+    Sidebar Settings
+*/
+
+/* Profile Picture */
+.homepage .profile-picture-frame {
+    box-shadow:0 0 0 5px #fff;
+    margin-bottom: 32px;
+}
+
+.homepage .profile-picture {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 100% 0 0;
+    background-color: #ccc;
+}
+
+.homepage img {
+    object-fit: cover;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%; 
+    height: 100%;
+}
+
+/* Social Media Links */
+.homepage .social-links {
+    padding-left:24px
+}
+
+.homepage .social-links .fa-brands {
+    margin-left:-24px;
+    margin-right:4px;
+    width: 15px;
+}
+
+.homepage .social-links .ai, .social-links svg {
+    margin-left:-25.5px;
+    margin-right:2.5px;
+    width: 18.5px
+}
+
+.homepage .social-links .ai, .social-links svg, .social-links .fa-brands {
+    opacity:.38
+}
+
+.homepage .social-links .substack-icon:after {
+    content: url('https://api.iconify.design/simple-icons/substack.svg?width=14&height=9');
+ }
+
+/*
+    Section Settings
+*/
+@media(min-width:992px) {
+    .homepage h1 {
+        font-size:48px;
+        line-height:52px
+    }
+    .homepage h2 {
+        font-size:36px;
+        line-height:44px
+    }
+    .homepage h1, h2 {
+        margin-top:-8px;
+        margin-bottom:-8px;
+        letter-spacing:-.02em
+    }
+    .homepage h3 {
+        margin-top:-5px;
+        margin-bottom:-7px;
+        font-size:24px;
+        line-height:32px;
+        letter-spacing:-.01em
+    }
+}
+
+.homepage p {
+    margin-top:-6px;
+    margin-bottom:-6px;
+    font-size:16px;
+    line-height:24px;
+    letter-spacing:0
+}
+
+/*-------------------------------------
+Code Topic Page Settings
+-------------------------------------*/
+
+.code-topic h2 {
+    text-align: left;
+    font-size: 1.65em;
+    font-weight: 700;
+    color: #626262;
+    margin: 0px 0px 0px 0px;
+    padding: 7px 20px 7px 0px;
+    border: solid 1px rgb(255, 255, 255);
+    background-color: #ffffff;
+}
+
+.code-topic h3 {
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: 300;
+    margin: 0px 0px 0px 0px;
+    opacity:.7;
+}
+
+.code-topic .card-body ul{
+    padding-left: 10px;
+    margin-bottom: 0px;
+  }
+
+.code-topic .card-body li{
+    margin-bottom: 0px;
+  }
+
+.code-topic .space-12 {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.code-topic .card {
+    border-radius: 0rem;
+    margin-bottom: 20px;
+  }
+  
+.code-topic .card-header {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.code-topic .card-body {
+    -webkit-columns: 384px 2;
+    -moz-columns: 384px 2;
+        columns: 384px 2;
+}
+
+/*-------------------------------------
+Code Tutorial Page Settings
+-------------------------------------*/
+
+.code_tutorial .mjx-math{
+    font-size: 1.1em;
+}
+
+.code_tutorial h1, .page h1{
+    font-size: 1.8rem;
+}
+
+.code_tutorial h2{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+
+.code_tutorial h3{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.code_tutorial h4{
+    font-size: 1.05em;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.code_tutorial h5{
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.code_tutorial li p {
+    margin-bottom: 0rem;
+}
+
+code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+}
+/*-------------------------------------
+Research Page Settings
+-------------------------------------*/
+
+/*-------------------------------------
+Course Page Settings
+-------------------------------------*/

@@ -1,0 +1,9 @@
+{{ $topic := .Get "topic" }}
+{{ $topic_title := .Get "topic_title" }}
+
+<!-- Topic Title -->
+<div class="row" id="{{ $topic }}">
+    <div class="col-sm-12">
+        <h2>{{ $topic_title | title }}</h2>
+    </div>
+</div>

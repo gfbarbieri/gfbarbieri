@@ -1,0 +1,24 @@
+{{ $topic := .Get "topic" }}
+{{ $sub_topic := replace (.Get "sub_topic") "_" " " }}
+{{ $path := print "/code_tutorials/" $topic "/" $sub_topic "/"}}
+
+<!-- Each card lists the code tutotirals within a sub-topic. -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <!-- Card Topic Title -->
+      <h3 class="card-header">{{ $sub_topic | title }}</h3>
+      <div class="card-body">
+          <!-- List Code Tutorials in Topic Folder -->
+          <ul>
+            {{ $pages := .Site.RegularPages }}
+            {{ range (where $pages "File.Dir" "in" $path) }}
+              <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
