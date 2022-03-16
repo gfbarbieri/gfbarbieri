@@ -6,9 +6,9 @@ Create a new code tutorial:
 1. Export the Jupyter Notebook as a markdown file.
 2. Open the markdown file add the "front matter" (title, author, date, description, type) in TOML format. Type is important as it links the content to the appropriate HTML layout in `/layouts`. That is, type must match a folder in the directory `/layouts/<TYPE>`.
 3. Move the markdown file to the appropriate folder in `/content`.
-4. If it is in a new sub-topic, add a line to `/content/code_topics/code_topics.md`.
 5. If it is in a new topic, a new item will need to be added to the navigation bar, `/partials/navigation.html`.
-6. Push changes to respository.
+6. If it is in a new sub-topic, add a line to `/content/code_topics/code_topics.md`.
+7. Push changes to respository.
 
 Create a new research item:
 1. No instructions yet.
