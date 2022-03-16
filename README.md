@@ -1,5 +1,5 @@
 # gfbarbieri.com
-This respository holds the content and code for my personal website. All of the content is available at gfbarbieri.com or gfbarbieri.github.io.
+This respository holds the content and code for my personal website. All of the content is available at <a href="https://gfbarbieri.com">gfbarbieri.com</a> or <a href="gfbarbieri.github.io">gfbarbieri.github.io</a>.
 
 ## Instructions
 Create a new code tutorial:
