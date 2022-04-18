@@ -2,7 +2,7 @@
 title: "Roll a Die, Flip a Coin"
 author: "Greg Barbieri"
 date: 2017-08-25
-description: "An example in counting."
+description: "Counting possible outcomes."
 type: "code_tutorials"
 --- 
 
@@ -10,17 +10,7 @@ This question comes from Professor David Morin's book, <a href="http://www.peopl
 
 1. One person rolls two six-sided dice, and another person flips six two-sided coins. <b>Which setup has the larger number of possible outcomes</b>, assuming that the order matters?
 
-There are two situations presented in the problem:
-1. One person rolls two six-sided dice.
-2. One person flips six two-sided coins.
-
-An identical way to phrase the first situation is, one person rolls one six-sided die twice. The concept embedded in this statement is that we are dealing with identical trials (or repetition/replacement).
-
-To paraphrase Professor Morin, if we take a ball from a box and put it back, future drawings can show a repeat of the ball drawn previously. This is inherent in rolling dice because "you don't remove the dots on a die after you roll it!" (Page 7-8).
-
-Since repetitions are allowed and the problem states order matters, we are to use the following formula, where N represents the number of outcomes (6 on a die) and k represents the number of trials or rolls (2 in this case): $$N^{k} = 6^2 = 36$$
-
-A fun way to solve is problem is by brute force using the itertools library. We start by importing the itertools library and creating a list called <b>die</b>, which will represent our six-sided die. You could just as easily mimic a 20-sided die by creating a list with 1-20 instead of 1-6.
+Import the itertools library and create a list called which will represent a six-sided die. You could easily mimic a 20-sided die by creating a list with 1-20 instead of 1-6.
 
 # Imports
 
@@ -33,16 +23,14 @@ die
     ['1', '2', '3', '4', '5', '6']
 
 
-If you prefer the statement "rolling two six-sided die once", then you can create all possible outcomes of rolling two identical die in the following matter.
-
-Using the <b>product()</b> function, we will perform a Cartesian product of the list <b>die</b> and itself. Each permutation will be stored in a list called <b>dice_permutations</b>.
+If you prefer the statement "rolling two six-sided die once", then you can create all possible outcomes of rolling two identical die using the <b>product</b> function, returning a Cartesian product of the list <b>die</b> and itself.
 
 
 ```python
 dice_permutations = list(itertools.product(die, die))
 ```
 
-If you prefer the statement "rolling one six-sided die twice", then create all possible outcomes using the repeat option instead of explicitly stating the two lists.
+If you prefer the equivalent statement "rolling one six-sided die twice", then create all possible outcomes using the repeat option instead of explicitly stating the two lists.
 
 
 ```python
@@ -59,8 +47,20 @@ list(itertools.product(die, die)) == list(itertools.product(die, repeat=2))
     True
 
 
+The list <b>dice_permutations</b> has 36 elements ($6^2$).
 
-The power of the itertools library allows us write out all of the outcomes associated with rolling one six-sided die twice. In other words, we can print the elements of the list <b>dice_permutations</b>, where each element is one of the possible outcomes from rolling a die twice (or two dice once).
+
+```python
+len(dice_permutations)
+```
+
+
+
+
+    36
+
+
+Print the elements of the list, where each element is one of the possible outcomes from rolling a die twice (or two dice once).
 
 
 ```python
@@ -106,23 +106,9 @@ dice_permutations
 
 
 
-By printing the length, we see that the list <b>dice_permutations</b> has 36 elements ($6^2$).
-
-
-```python
-len(dice_permutations)
-```
-
-
-
-
-    36
-
-
-
 The second situation involves one person flipping six two-sided coins, or equivalently, one person flipping one two-sided coin six times.
 
-Let's create a list called <b>coin</b> which will have the two outcomes of flipping a coin: 'H' for heads and 'T' for tails.
+Let's create a list representing the two outcomes of flipping a coin.
 
 
 ```python
@@ -137,22 +123,21 @@ coin
 
 
 
-If you prefer the concept of flipping six two-sided coins, then explicitly list all six coins in the <b>product()</b> function. The following line will create a list called <b>coin_permutations</b>, where each element will have one outcome from flipping six coins simultaneously.
+If you prefer flipping six two-sided coins, then use the <b>product</b> again to create every combination of the six coins.
 
 
 ```python
 coin_permutations = list(itertools.product(coin, coin, coin, coin, coin, coin))
 ```
 
-If you prefer of flipping one two-sided coin six times, then using the repeat option will capture that conceptually.
+If you prefer of flipping one two-sided coin six times, then using the repeat option.
 
 
 ```python
 coin_permutations = list(itertools.product(coin, repeat=6))
 ```
 
-The two approaches are identical, as we can see from the comparison below.
-
+Again, the two approaches are identical.
 
 ```python
 list(itertools.product(coin, coin, coin, coin, coin, coin)) == list(itertools.product(coin, repeat=6))
@@ -163,6 +148,18 @@ list(itertools.product(coin, coin, coin, coin, coin, coin)) == list(itertools.pr
 
     True
 
+
+There are 64 possible outcomes of flipping a two-sided coin six times.
+
+
+```python
+len(coin_permutations)
+```
+
+
+
+
+    64
 
 
 We can write out our sample space from flipping six coins to see what it looks like.
@@ -241,19 +238,4 @@ coin_permutations
      ('T', 'T', 'T', 'T', 'T', 'T')]
 
 
-
-Printing the length of the list tells us that there are 64 possible outcomes of flipping a two-sided coin six times.
-
-
-```python
-len(coin_permutations)
-```
-
-
-
-
-    64
-
-
-
-Since 64 is greater than 36 (or using our formula, $2^6$ is greater than $6^2$), flipping a two-sided coin six times produces more outcomes than rolling a six-sided die twice. Ah, the power of exponential growth!
+Since 64 is greater than 36 ($2^6 > 6^2$), flipping a two-sided coin six times produces more outcomes than rolling a six-sided die twice. Ah, the power of exponential growth!

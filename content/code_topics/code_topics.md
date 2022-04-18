@@ -13,7 +13,11 @@ type: "code_topics"
 <!-- {{< code_topics topic_title="Python">}}
 {{< code_subtopics topic="python" sub_topic="data_analysis" >}} -->
 
-<!-- Fun code -->
-{{< code_topics topic_title="Fun Exercises" >}}
-{{< code_subtopics topic="fun" sub_topic="probability">}}
-{{< code_subtopics topic="fun" sub_topic="counting">}}
+<!-- Math -->
+{{< code_topics topic_title="Math" >}}
+{{< code_subtopics topic="math" sub_topic="counting">}}
+{{< code_subtopics topic="math" sub_topic="probability">}}
+
+<!-- GIS -->
+{{< code_topics topic_title="GIS" >}}
+{{< code_subtopics topic="gis" sub_topic="basics">}}

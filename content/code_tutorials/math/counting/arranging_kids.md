@@ -1,8 +1,8 @@
 ---
-title: "Counting, an Introduction"
+title: "Arranging Kids in Seats"
 author: "Greg Barbieri"
 date: 2017-08-17
-description: "An introduction to approaching counting problems using Python."
+description: "Counting the arrangements of kids in seats."
 type: "code_tutorials"
 --- 
 
