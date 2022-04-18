@@ -56,6 +56,6 @@ gdf_dc_ct.plot(ax=ax, color='yellow')
 
 
     
-![png](calc_geo_centroid.png)
+![png](/images/calc_geo_centroid.png)
     
 
