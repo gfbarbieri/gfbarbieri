@@ -1,0 +1,129 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Greg Barbieri</title><link href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css rel=stylesheet><link href=/css/custom.css rel=stylesheet><link href=/css/syntax.css rel=stylesheet><script src=https://kit.fontawesome.com/d86cd22b71.js crossorigin=anonymous></script>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css rel=stylesheet><script src=https://code.jquery.com/jquery-3.2.1.slim.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js></script>
+<script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}},window.addEventListener("load",e=>{document.querySelectorAll("mjx-container").forEach(function(e){e.parentElement.classList+="has-jax"})})</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script></head><body><nav class="navbar navbar-expand-sm fixed-top"><div class=container><a class=navbar-brand href=/>Greg Barbieri</a><div class="collapse navbar-collapse"><ul class="nav navbar-nav mr-auto"></ul><ul class=navbar-nav><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-toggle=dropdown>Code Tutorials</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby=navbarDropdown><a class=dropdown-item href=/code_topics/code_topics#math>Math</a>
+<a class=dropdown-item href=/code_topics/code_topics#gis>GIS</a></div></li></ul></div></div></nav><main class=code_tutorial><div class=container style=padding-top:100px><div class=row><div class=col-sm-12><article><header><h1>Roll a Die, Flip a Coin</h1></header><div class=content><p>This question comes from Professor David Morin&rsquo;s book, <a href=http://www.people.fas.harvard.edu/~djmorin/book.html>Probability For the Enthusiastic Beginner</a>, Chapter 1, page 26.</p><ol><li>One person rolls two six-sided dice, and another person flips six two-sided coins. <b>Which setup has the larger number of possible outcomes</b>, assuming that the order matters?</li></ol><p>Import the itertools library and create a list called which will represent a six-sided die. You could easily mimic a 20-sided die by creating a list with 1-20 instead of 1-6.</p><h1 id=imports>Imports</h1><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#007020;font-weight:700>import</span> <span style=color:#0e84b5;font-weight:700>itertools</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>die <span style=color:#666>=</span> [<span style=color:#4070a0>&#39;1&#39;</span>,<span style=color:#4070a0>&#39;2&#39;</span>,<span style=color:#4070a0>&#39;3&#39;</span>,<span style=color:#4070a0>&#39;4&#39;</span>,<span style=color:#4070a0>&#39;5&#39;</span>,<span style=color:#4070a0>&#39;6&#39;</span>]
+</span></span><span style=display:flex><span>die
+</span></span></code></pre></div><pre><code>['1', '2', '3', '4', '5', '6']
+</code></pre><p>If you prefer the statement &ldquo;rolling two six-sided die once&rdquo;, then you can create all possible outcomes of rolling two identical die using the <b>product</b> function, returning a Cartesian product of the list <b>die</b> and itself.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>dice_permutations <span style=color:#666>=</span> <span style=color:#007020>list</span>(itertools<span style=color:#666>.</span>product(die, die))
+</span></span></code></pre></div><p>If you prefer the equivalent statement &ldquo;rolling one six-sided die twice&rdquo;, then create all possible outcomes using the repeat option instead of explicitly stating the two lists.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>dice_permutations <span style=color:#666>=</span> <span style=color:#007020>list</span>(itertools<span style=color:#666>.</span>product(die, repeat<span style=color:#666>=</span><span style=color:#40a070>2</span>))
+</span></span></code></pre></div><p>Both return the same outcomes, as we can see from the following comparison.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#007020>list</span>(itertools<span style=color:#666>.</span>product(die, die)) <span style=color:#666>==</span> <span style=color:#007020>list</span>(itertools<span style=color:#666>.</span>product(die, repeat<span style=color:#666>=</span><span style=color:#40a070>2</span>))
+</span></span></code></pre></div><pre><code>True
+</code></pre><p>The list <b>dice_permutations</b> has 36 elements ($6^2$).</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#007020>len</span>(dice_permutations)
+</span></span></code></pre></div><pre><code>36
+</code></pre><p>Print the elements of the list, where each element is one of the possible outcomes from rolling a die twice (or two dice once).</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>dice_permutations
+</span></span></code></pre></div><pre><code>[('1', '1'),
+ ('1', '2'),
+ ('1', '3'),
+ ('1', '4'),
+ ('1', '5'),
+ ('1', '6'),
+ ('2', '1'),
+ ('2', '2'),
+ ('2', '3'),
+ ('2', '4'),
+ ('2', '5'),
+ ('2', '6'),
+ ('3', '1'),
+ ('3', '2'),
+ ('3', '3'),
+ ('3', '4'),
+ ('3', '5'),
+ ('3', '6'),
+ ('4', '1'),
+ ('4', '2'),
+ ('4', '3'),
+ ('4', '4'),
+ ('4', '5'),
+ ('4', '6'),
+ ('5', '1'),
+ ('5', '2'),
+ ('5', '3'),
+ ('5', '4'),
+ ('5', '5'),
+ ('5', '6'),
+ ('6', '1'),
+ ('6', '2'),
+ ('6', '3'),
+ ('6', '4'),
+ ('6', '5'),
+ ('6', '6')]
+</code></pre><p>The second situation involves one person flipping six two-sided coins, or equivalently, one person flipping one two-sided coin six times.</p><p>Let&rsquo;s create a list representing the two outcomes of flipping a coin.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>coin <span style=color:#666>=</span> [<span style=color:#4070a0>&#39;H&#39;</span>,<span style=color:#4070a0>&#39;T&#39;</span>]
+</span></span><span style=display:flex><span>coin
+</span></span></code></pre></div><pre><code>['H', 'T']
+</code></pre><p>If you prefer flipping six two-sided coins, then use the <b>product</b> again to create every combination of the six coins.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>coin_permutations <span style=color:#666>=</span> <span style=color:#007020>list</span>(itertools<span style=color:#666>.</span>product(coin, coin, coin, coin, coin, coin))
+</span></span></code></pre></div><p>If you prefer of flipping one two-sided coin six times, then using the repeat option.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>coin_permutations <span style=color:#666>=</span> <span style=color:#007020>list</span>(itertools<span style=color:#666>.</span>product(coin, repeat<span style=color:#666>=</span><span style=color:#40a070>6</span>))
+</span></span></code></pre></div><p>Again, the two approaches are identical.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#007020>list</span>(itertools<span style=color:#666>.</span>product(coin, coin, coin, coin, coin, coin)) <span style=color:#666>==</span> <span style=color:#007020>list</span>(itertools<span style=color:#666>.</span>product(coin, repeat<span style=color:#666>=</span><span style=color:#40a070>6</span>))
+</span></span></code></pre></div><pre><code>True
+</code></pre><p>There are 64 possible outcomes of flipping a two-sided coin six times.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#007020>len</span>(coin_permutations)
+</span></span></code></pre></div><pre><code>64
+</code></pre><p>We can write out our sample space from flipping six coins to see what it looks like.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>coin_permutations
+</span></span></code></pre></div><pre><code>[('H', 'H', 'H', 'H', 'H', 'H'),
+ ('H', 'H', 'H', 'H', 'H', 'T'),
+ ('H', 'H', 'H', 'H', 'T', 'H'),
+ ('H', 'H', 'H', 'H', 'T', 'T'),
+ ('H', 'H', 'H', 'T', 'H', 'H'),
+ ('H', 'H', 'H', 'T', 'H', 'T'),
+ ('H', 'H', 'H', 'T', 'T', 'H'),
+ ('H', 'H', 'H', 'T', 'T', 'T'),
+ ('H', 'H', 'T', 'H', 'H', 'H'),
+ ('H', 'H', 'T', 'H', 'H', 'T'),
+ ('H', 'H', 'T', 'H', 'T', 'H'),
+ ('H', 'H', 'T', 'H', 'T', 'T'),
+ ('H', 'H', 'T', 'T', 'H', 'H'),
+ ('H', 'H', 'T', 'T', 'H', 'T'),
+ ('H', 'H', 'T', 'T', 'T', 'H'),
+ ('H', 'H', 'T', 'T', 'T', 'T'),
+ ('H', 'T', 'H', 'H', 'H', 'H'),
+ ('H', 'T', 'H', 'H', 'H', 'T'),
+ ('H', 'T', 'H', 'H', 'T', 'H'),
+ ('H', 'T', 'H', 'H', 'T', 'T'),
+ ('H', 'T', 'H', 'T', 'H', 'H'),
+ ('H', 'T', 'H', 'T', 'H', 'T'),
+ ('H', 'T', 'H', 'T', 'T', 'H'),
+ ('H', 'T', 'H', 'T', 'T', 'T'),
+ ('H', 'T', 'T', 'H', 'H', 'H'),
+ ('H', 'T', 'T', 'H', 'H', 'T'),
+ ('H', 'T', 'T', 'H', 'T', 'H'),
+ ('H', 'T', 'T', 'H', 'T', 'T'),
+ ('H', 'T', 'T', 'T', 'H', 'H'),
+ ('H', 'T', 'T', 'T', 'H', 'T'),
+ ('H', 'T', 'T', 'T', 'T', 'H'),
+ ('H', 'T', 'T', 'T', 'T', 'T'),
+ ('T', 'H', 'H', 'H', 'H', 'H'),
+ ('T', 'H', 'H', 'H', 'H', 'T'),
+ ('T', 'H', 'H', 'H', 'T', 'H'),
+ ('T', 'H', 'H', 'H', 'T', 'T'),
+ ('T', 'H', 'H', 'T', 'H', 'H'),
+ ('T', 'H', 'H', 'T', 'H', 'T'),
+ ('T', 'H', 'H', 'T', 'T', 'H'),
+ ('T', 'H', 'H', 'T', 'T', 'T'),
+ ('T', 'H', 'T', 'H', 'H', 'H'),
+ ('T', 'H', 'T', 'H', 'H', 'T'),
+ ('T', 'H', 'T', 'H', 'T', 'H'),
+ ('T', 'H', 'T', 'H', 'T', 'T'),
+ ('T', 'H', 'T', 'T', 'H', 'H'),
+ ('T', 'H', 'T', 'T', 'H', 'T'),
+ ('T', 'H', 'T', 'T', 'T', 'H'),
+ ('T', 'H', 'T', 'T', 'T', 'T'),
+ ('T', 'T', 'H', 'H', 'H', 'H'),
+ ('T', 'T', 'H', 'H', 'H', 'T'),
+ ('T', 'T', 'H', 'H', 'T', 'H'),
+ ('T', 'T', 'H', 'H', 'T', 'T'),
+ ('T', 'T', 'H', 'T', 'H', 'H'),
+ ('T', 'T', 'H', 'T', 'H', 'T'),
+ ('T', 'T', 'H', 'T', 'T', 'H'),
+ ('T', 'T', 'H', 'T', 'T', 'T'),
+ ('T', 'T', 'T', 'H', 'H', 'H'),
+ ('T', 'T', 'T', 'H', 'H', 'T'),
+ ('T', 'T', 'T', 'H', 'T', 'H'),
+ ('T', 'T', 'T', 'H', 'T', 'T'),
+ ('T', 'T', 'T', 'T', 'H', 'H'),
+ ('T', 'T', 'T', 'T', 'H', 'T'),
+ ('T', 'T', 'T', 'T', 'T', 'H'),
+ ('T', 'T', 'T', 'T', 'T', 'T')]
+</code></pre><p>Since 64 is greater than 36 ($2^6 > 6^2$), flipping a two-sided coin six times produces more outcomes than rolling a six-sided die twice. Ah, the power of exponential growth!</p></div></article></div></div></div></main><footer class=footer><div class=container><span class=text-muted><p>Greg Barbieri &#183; 2022 &#183; <a href>License</a></p></span><div class="col-md-4 col-sm-6"></div></div></footer></body></html>
