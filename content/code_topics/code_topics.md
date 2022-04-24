@@ -5,25 +5,17 @@ description: "List of code tutorials by topic."
 type: "code_topics"
 ---
 
-<!-- Machine Learning -->
-<!-- {{< code_topics topic_title="Machine Learning" >}}
-{{< code_subtopics topic="machine_learning" sub_topic="basics" >}} -->
-
-<!-- Python -->
-<!-- {{< code_topics topic_title="Python">}}
-{{< code_subtopics topic="python" sub_topic="data_analysis" >}} -->
-
 <!-- Math -->
 {{< code_topics topic_title="Math" >}}
-{{< code_subtopics topic="math" sub_topic="probability">}}
-{{< code_subtopics topic="math" sub_topic="optimization">}}
-{{< code_subtopics topic="math" sub_topic="linear_algebra">}}
+{{< code_subtopics topic="math" sub_topic="probability" >}}
+{{< code_subtopics topic="math" sub_topic="optimization" >}}
+{{< code_subtopics topic="math" sub_topic="linear_algebra" >}}
 
 <!-- GIS -->
 {{< code_topics topic_title="GIS" >}}
-{{< code_subtopics topic="gis" sub_topic="basics">}}
+{{< code_subtopics topic="gis" sub_topic="basics" >}}
 
 <!-- Data Sources -->
 {{< code_topics topic_title="Data Sources" >}}
-{{< code_subtopics topic="data_sources" sub_topic="databases">}}
-{{< code_subtopics topic="data_sources" sub_topic="files">}}
+{{< code_subtopics topic="data_sources" sub_topic="databases" >}}
+{{< code_subtopics topic="data_sources" sub_topic="files" >}}
