@@ -15,7 +15,6 @@ type: "code_topics"
 
 <!-- Math -->
 {{< code_topics topic_title="Math" >}}
-{{< code_subtopics topic="math" sub_topic="counting">}}
 {{< code_subtopics topic="math" sub_topic="probability">}}
 {{< code_subtopics topic="math" sub_topic="optimization">}}
 {{< code_subtopics topic="math" sub_topic="linear_algebra">}}
