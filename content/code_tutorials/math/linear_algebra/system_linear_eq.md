@@ -1,7 +1,7 @@
 ---
 title: "Solve System of Linear Equations"
 author: "Greg Barbieri"
-date: 2022-04-23
+date: 2022-04-22
 description: "Solve a system of linear equations with Sympy."
 type: "code_tutorials"
 ---
