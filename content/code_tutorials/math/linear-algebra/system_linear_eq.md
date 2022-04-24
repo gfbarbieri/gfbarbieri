@@ -1,7 +1,7 @@
 ---
 title: "Solve System of Linear Equations"
 author: "Greg Barbieri"
-date: 2022-04-22
+date: 2022-04-23
 description: "Solve a system of linear equations with Sympy."
 type: "code_tutorials"
 ---
@@ -15,9 +15,11 @@ Solve basic systems of linear equations: [SymPy Documentation](https://docs.symp
 import sympy as sp
 ```
 
-$$ 5x - y + 3z = 12 \\
-3x + y + z = 2 \\
-x + 2y + z = 0 $$
+$$ \begin{align}
+5x - y + 3z & = 12 \\\
+3x + y + z & = 2 \\\
+x + 2y + z & = 0
+\end{align} $$
 
 ### Define System of Equations
 
@@ -56,9 +58,4 @@ sol = sp.linsolve((A,b), (x, y, z))
 sol
 ```
 
-
-
-
-$\displaystyle \left\{\left( \frac{1}{6}, \  - \frac{5}{3}, \  \frac{19}{6}\right)\right\}$
-
-
+$ \frac{1}{6},  - \frac{5}{3},  \frac{19}{6} $

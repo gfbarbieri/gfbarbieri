@@ -9,7 +9,7 @@ type: "code_topics"
 {{< code_topics topic_title="Math" >}}
 {{< code_subtopics topic="math" sub_topic="probability" >}}
 {{< code_subtopics topic="math" sub_topic="optimization" >}}
-{{< code_subtopics topic="math" sub_topic="linear_algebra" >}}
+{{< code_subtopics topic="math" sub_topic="linear-algebra" >}}
 
 <!-- GIS -->
 {{< code_topics topic_title="GIS" >}}
