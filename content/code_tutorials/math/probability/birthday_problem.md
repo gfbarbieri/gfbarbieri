@@ -1,3 +1,11 @@
+---
+title: "Birthday Problem"
+author: "Greg Barbieri"
+date: 2022-04-18
+description: "Probability of shared birthdays."
+type: "code_tutorials"
+---
+
 ### Birthday Problem
 
 If there are n people in the room, the probability that all n birthdays are distinct equals (none are equal):
