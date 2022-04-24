@@ -1,7 +1,7 @@
 {{ $topic := .Get "topic" }}
 {{ $sub_topic := .Get "sub_topic" }}
 {{ $path := print "/code_tutorials/" $topic "/" $sub_topic "/"}}
-{{ $sub_topic_title := replace (.Get "sub_topic") "-" " " }}
+{{ $sub_topic_title := replace (.Get "sub_topic") "_" " " }}
 
 <!-- Each card lists the code tutotirals within a sub-topic. -->
 <div class="row">
