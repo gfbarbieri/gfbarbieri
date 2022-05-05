@@ -1,5 +1,5 @@
 ---
-title: "Extract Data from Zip Files."
+title: "Unzip a Zip File."
 author: "Greg Barbieri"
 date: 2022-04-22
 description: "Extract Zip files."

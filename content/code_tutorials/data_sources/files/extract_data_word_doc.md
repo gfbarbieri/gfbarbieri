@@ -6,7 +6,7 @@ description: "Extract data from tables in a Word document."
 type: "code_tutorials"
 --- 
 
-Extract data from a Microsoft Word document. Word documents are essentially XML files.
+Extract data from a Microsoft Word document. Word documents are essentially XML files. Each Word document may present new wrangling challenges.
 
 ### Imports
 

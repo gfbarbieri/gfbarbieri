@@ -6,7 +6,7 @@ description: "Extract data from PDF table."
 type: "code_tutorials"
 --- 
 
-Extract state-level [telephone usage estimates](https://www.cdc.gov/nchs/nhis/releases.htm#wireless) from a table in a PDF.
+Extract state-level [telephone usage estimates](https://www.cdc.gov/nchs/nhis/releases.htm#wireless) from a table in a PDF. There does not exist a standard way to perform this task. Each PDF table will present new wrangling challenges.
 
 ### Imports
 
