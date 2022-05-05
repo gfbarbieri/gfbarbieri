@@ -1,8 +1,8 @@
 ---
-title: "Write to SAS Dataset"
+title: "Write to a SAS Dataset"
 author: "Greg Barbieri"
 date: 2022-04-23
-description: "Output data as a SAS dataset."
+description: "Write data as a SAS dataset."
 type: "code_tutorials"
 --- 
 

@@ -1,20 +1,23 @@
 # gfbarbieri.com
-This respository holds the content and code for my personal website. All of the content is available at <a href="https://gfbarbieri.com">gfbarbieri.com</a> or <a href="gfbarbieri.github.io">gfbarbieri.github.io</a>.
+This respository contains the content of my personal website. All of the content is available at <a href="https://gfbarbieri.com">gfbarbieri.com</a>.
 
 ## Instructions
-Create a new code tutorial:
-1. Export the Jupyter Notebook as a markdown file.
-2. Open the markdown file add the "front matter" (title, author, date, description, type) in TOML format. Type is important as it links the content to the appropriate HTML layout in `/layouts`. That is, type must match a folder in the directory `/layouts/<TYPE>`.
-3. Move the markdown file to the appropriate folder in `/content`.
-5. If it is in a new topic, a new item will need to be added to the navigation bar, `/partials/navigation.html`.
-6. If it is in a new sub-topic, add a line to `/content/code_topics/code_topics.md`.
-7. Push changes to respository.
+Create a code tutorial:
+1. Convert the Jupyter Notebook to a markdown file.
+2. Add the front matter in TOML format to the markdown file (title, author, date, description, type). 'Type' links the content to the appropriate HTML layout in `/layouts/<TYPE>/`.
+3. Move the markdown file to the appropriate topic folder in `/content/code_tutorials/`.
+4. If the markdown file contains images, rename it using the file name of the code tutorial and a suffix number.
+5. Move the image to `/static/images/`.
+6. Update the markdown file to point to the image's file path.
+7. If it is a new topic, add it to the navigation bar in `/partials/navigation.html`.
+8. If it is a new sub-topic, add a line to `/content/code_topics/code_topics.md`.
+9. Push changes.
 
-Create a new research item:
+Create a research item:
 1. No instructions yet.
 
-Create a new course:
+Create a course:
 1. No instructions yet.
 
-Create a new recording:
+Create a recording:
 1. No instructions yet.
