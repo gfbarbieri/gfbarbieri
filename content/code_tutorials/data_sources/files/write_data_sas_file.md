@@ -1,5 +1,5 @@
 ---
-title: "Write to a SAS Dataset"
+title: "Write Data to a SAS Dataset"
 author: "Greg Barbieri"
 date: 2022-04-23
 description: "Write data as a SAS dataset."

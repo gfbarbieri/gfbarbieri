@@ -1,12 +1,12 @@
 ---
-title: "Extract Data from PDF Table."
+title: "Read Data from PDF Files."
 author: "Greg Barbieri"
 date: 2022-04-22
 description: "Extract data from PDF table."
 type: "code_tutorials"
 --- 
 
-Extract state-level [telephone usage estimates](https://www.cdc.gov/nchs/nhis/releases.htm#wireless) from a table in a PDF. There does not exist a standard way to perform this task. Each PDF table will present new wrangling challenges.
+The goal is to extract state-level [telephone usage estimates](https://www.cdc.gov/nchs/nhis/releases.htm#wireless) from a table in a PDF file. No standard way exists to extract data from a table in a PDF. Each PDF will present new data wrangling challenges.
 
 ### Imports
 

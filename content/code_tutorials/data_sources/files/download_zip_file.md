@@ -14,7 +14,7 @@ import requests
 
 ### Download ZIP file
 
-Download the data using `requests` library.
+Download the ZIP file using the `requests` library.
 
 
 ```python

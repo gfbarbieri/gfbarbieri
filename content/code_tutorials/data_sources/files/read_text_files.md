@@ -1,8 +1,8 @@
 ---
-title: "Extract Data from Text Files."
+title: "Read Data from Text Files"
 author: "Greg Barbieri"
 date: 2022-04-22
-description: "Extract data from text files."
+description: "Read data from text files."
 type: "code_tutorials"
 ---
 
@@ -25,20 +25,16 @@ response = requests.get("http://download.bls.gov/pub/time.series/cu/cu.data.1.Al
 
 ### Create Pandas Data Frame
 
-Use `io.StrongIO(response.text)` to access data stored in memory. Otherwise, pass response directly to Pandas. Use `read_csv` to create a Pandas Data Frame. This file is separated by tab characters ('\t').
+Use `io.StrongIO(response.text)` to access data stored in memory. Otherwise, pass the file path directly to Pandas. Use `read_csv` to create a Pandas Data Frame. This file is separated by tab characters ('\t').
 
 
 ```python
 df = pd.read_csv(filepath_or_buffer=io.StringIO(response.text), sep='\t')
 ```
 
-
 ```python
 df.head()
 ```
-
-
-
 
 <div>
 <style scoped>

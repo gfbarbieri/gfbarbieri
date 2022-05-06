@@ -1,12 +1,12 @@
 ---
-title: "Extract Data from Word Documents."
+title: "Read Data from Word Documents."
 author: "Greg Barbieri"
 date: 2022-04-23
 description: "Extract data from tables in a Word document."
 type: "code_tutorials"
 --- 
 
-Extract data from a Microsoft Word document. Word documents are essentially XML files. Each Word document may present new wrangling challenges.
+Extracting data from a Microsoft Word documents will constantly present new data wrangling challenges. Keep in mind that Word documents are essentially XML files.
 
 ### Imports
 

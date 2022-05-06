@@ -1,10 +1,10 @@
 ---
-title: "Read SAS Datasets"
+title: "Read Data from SAS Datasets"
 author: "Greg Barbieri"
 date: 2022-04-22
 description: "Read SAS datasets."
 type: "code_tutorials"
---- 
+---
 
 ### Imports
 
@@ -25,8 +25,6 @@ df = pd.read_sas("input_dataset.sas7bdat", encoding='latin-1')
 ```python
 df.head()
 ```
-
-
 
 
 <div>

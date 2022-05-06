@@ -1,10 +1,10 @@
 ---
-title: "Unzip a Zip File."
+title: "Unzip a ZIP File."
 author: "Greg Barbieri"
 date: 2022-04-22
-description: "Extract Zip files."
+description: "Extract files from a ZIP file."
 type: "code_tutorials"
---- 
+---
 
 ### Imports
 
@@ -14,6 +14,6 @@ import zipfile
 ### Extract Zip File
 
 ```python
-with zipfile.ZipFile("AirQualityUCI.zip", "r") as f:
+with zipfile.ZipFile("input_file.zip", "r") as f:
     f.extractall()
 ```

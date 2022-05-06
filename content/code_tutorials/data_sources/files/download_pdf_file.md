@@ -2,9 +2,11 @@
 title: "Download PDF Files"
 author: "Greg Barbieri"
 date: 2022-04-22
-description: "Download PDf files."
+description: "Download PDF files."
 type: "code_tutorials"
 ---
+
+Download a PDF file from the web.
 
 ### Imports
 
