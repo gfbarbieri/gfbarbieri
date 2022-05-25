@@ -17,5 +17,6 @@ type: "code_topics"
 
 <!-- Data Sources -->
 {{< code_topics topic_title="Data Sources" >}}
-{{< code_subtopics topic="data_sources" sub_topic="databases" >}}
 {{< code_subtopics topic="data_sources" sub_topic="files" >}}
+{{< code_subtopics topic="data_sources" sub_topic="databases" >}}
+{{< code_subtopics topic="data_sources" sub_topic="web_scraping" >}}

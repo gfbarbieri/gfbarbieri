@@ -60,7 +60,7 @@ len(deck_of_cards)
 
 Create all possible poker hands. The total number of poker hands is equal to the number of unordered 5 card arrangements, without repetitions, from 52 cards.
 
-$$\binom{52}{5} = \frac{52!}{5!(52-5)!} = \frac{52!}{5!47!} = \frac{52*51*50*49*48}{5!} = 2,598,960$$
+$$\binom{52}{5} = \frac{52!}{5!(52-5)!} = \frac{52!}{5!47!} = \frac{52 \times 51 \times 50 \times 49 \times 48}{5!} = 2,598,960$$
 
 
 ```python
