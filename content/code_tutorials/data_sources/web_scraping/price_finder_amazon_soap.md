@@ -19,28 +19,28 @@ from selenium import webdriver
 
 ### Amazon Text Search
 
-Find the base URL of Amazon's text search by searching for someone on the Amazon website.
+Find the base URL of Amazon's text search by searching for an item on Amazon.
 
 
 ```python
 base_url = 'https://www.amazon.com/s'
 ```
 
-Infer from the results that `k` is the parameter that the text search is passed to, which I pass a parameter to the request.
+Infer from the resulting URL that `k` is the parameter the text is passed to, which I pass a parameter to the request.
 
 
 ```python
 params = {'k':'olive oil soap'}
 ```
 
-Create URL
+Use the Requests library to create the URL that Selenium will open a browser to.
 
 
 ```python
 url = requests.Request('GET', base_url, params=params).prepare().url
 ```
 
-Use Selenium WebDriver to create HTML.
+Use Selenium WebDriver to open a Chrome browser to the URL for olive oil soap on Amazon.
 
 
 ```python
@@ -48,7 +48,7 @@ driver = webdriver.Chrome()
 driver.get(url)
 ```
 
-Part the HTML using Selenium. Each item for sale is stored in a container called `s-card-container`. I will perform some edits before creating the Pandas Data Frame.
+Inspecting the Amazon page, it appears that the items for sale is stored in a container called `s-card-container`. I looping over the items in the container, I perform some edits before creating a Pandas Data Frame.
 
 
 ```python
@@ -86,8 +86,6 @@ df = pd.DataFrame(data=item, columns=['product', 'size', 'price_whole', 'price_p
 
 df.head()
 ```
-
-
 
 
 <div>
@@ -158,7 +156,7 @@ df.head()
 
 ### Edit Price and Unit Data
 
-Standardize the price and unit data as best as possible and drop duplicates.
+Create a price variable and a price per unit variable using the text data. Drop duplicate rows.
 
 
 ```python
@@ -172,14 +170,12 @@ df.drop_duplicates(inplace=True)
 
 ### Find Cheapest Product
 
-Cheapest item by price.
+Find cheapest item by price.
 
 
 ```python
 df.loc[df['price'].astype('float') == df['price'].astype('float').min()]
 ```
-
-
 
 
 <div>
@@ -220,14 +216,12 @@ df.loc[df['price'].astype('float') == df['price'].astype('float').min()]
 
 
 
-Cheapest item by unit price.
+Find cheapest item by unit price.
 
 
 ```python
 df.loc[df['price_per_unit'].astype('float') == df['price_per_unit'].astype('float').min()]
 ```
-
-
 
 
 <div>
